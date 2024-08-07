@@ -1,0 +1,175 @@
+@import '/src/styles/vars';
+
+@keyframes move {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-40px);
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+@keyframes leftSection {
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+
+    100% {
+        opacity: 1;
+        padding: 1.5rem 2.5rem;
+        width: 500px;
+    }
+}
+
+.login_container {
+    ::selection {
+        background-color: transparent;
+    }
+    ::-moz-selection {
+        background-color: transparent;
+    }
+
+    display: flex;
+    height: 100vh;
+
+    .left_section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        animation-name: leftSection;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        animation-delay: 1s;
+    }
+
+    .right_section {
+        flex: 1;
+        background-image: url('../../assets/images/foto_login_page.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: 1s cubic-bezier(0.95, 0.46, 0.45, 0.94);
+    }
+
+    .login_header {
+        text-align: center;
+
+        .title {
+            margin: 0;
+            color: $TextcolorMain;
+            margin-bottom: 10px;
+        }
+
+        .sub_title {
+            margin-bottom: 15px;
+            font-weight: normal;
+            font-size: 15px;
+            color: $TextcolorMain;
+        }
+    }
+
+    .login_form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        padding: 25px;
+        background-color: $colorWhite;
+        border-radius: 15px;
+
+
+        .form_field_group {
+            position: relative;
+
+            .form_field {
+                height: 50px;
+                width: 100%;
+                font-size: 14px;
+                padding: 3px 10px;
+                outline: 0;
+                border: none;
+                border-radius: 10px;
+                transition-duration: .2s;
+
+                background-color: $mainBackgroundColor;
+                
+                &:hover {
+                    box-shadow: $boxShadowOne;
+                }
+
+                &:focus {
+                    box-shadow: $boxShadowOne;
+                }
+            }
+        }
+
+        .login_button {
+            padding: 12px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 1.5px;
+            border: none;
+            border-radius: 3px;
+            background-color: $TextcolorMain;
+            cursor: pointer;
+            transition-duration: 0.5s;
+
+            &:hover {
+                box-shadow: 0 0px 8px -2px #000;
+            }
+        }
+
+    }
+
+    .animation {
+        animation-name: move;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        animation-delay: 2s;
+
+        &.a1 {
+            animation-delay: 2s;
+        }
+
+        &.a2 {
+            animation-delay: 2.1s;
+        }
+
+        &.a3 {
+            animation-delay: 2.2s;
+        }
+
+        &.a4 {
+            animation-delay: 2.3s;
+        }
+
+        &.a5 {
+            animation-delay: 2.4s;
+        }
+
+        &.a6 {
+            animation-delay: 2.5s;
+        }
+    }
+}
+
+.btn_swhow_password{
+    position: absolute;
+    top: 50%;
+    right: 3px;
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+
+    .icon_eye{
+        fill: $TextcolorMain;
+    }
+}
