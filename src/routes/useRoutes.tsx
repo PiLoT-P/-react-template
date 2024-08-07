@@ -16,7 +16,7 @@ export const useRoutes = (isAuthorized: boolean) => {
     return (
         <Routes>
             <Route path="*" element={<Navigate to="/page1" replace />}/>
-            <Route path="/auth" element={<Navigate to="/news" replace />} />
+            <Route path="/auth" element={<Navigate to="/page1" replace />} />
             <Route path="/page1" element={<PageOne/>}/>
             <Route path="/page2" element={<PageTwo/>}/>
         </Routes>

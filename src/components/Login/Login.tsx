@@ -10,10 +10,12 @@ function Login() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [isLoading, setIsloading] = useState<boolean>(false);
   const { login } = useAuthStore();
+
   const formDefaultValues: LoginSchemaType = {
     username: '',
     password: '',
   }
+  
   const {
     handleSubmit,
     register,
@@ -41,7 +43,7 @@ function Login() {
 
   return (
     <section className={s.login_section}>
-      <div className={s.login_container}>
+      <div className={s.login_container} >
         <div className={`${s.left_section}`}>
           <div className={s.login_header}>
             <h1 className={`${s.title} ${s.animation} ${s.a1}`}>З поверненням!</h1>
